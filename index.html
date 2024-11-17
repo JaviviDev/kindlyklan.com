@@ -2,9 +2,71 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kindly Klan Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kindly Klan - El mejor estudio de Minecraft.">
+    <meta name="author" content="Kindly Klan">
+    <title>Kindly Klan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+<header>
+    <nav>
+        <div class="logo">Kindly Klan</div>
+        <ul>
+            <li><a href="#about">Sobre Nosotros</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li><a href="#contact">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <section id="hero">
+        <h1>Bienvenidos a Kindly Klan</h1>
+        <p>Tu estudio de Minecraft favorito</p>
+        <a href="#projects" class="button">Descubre más</a>
+    </section>
+    <section id="about">
+        <h2>Sobre Nosotros</h2>
+        <p>Kindly Klan es un estudio dedicado a crear mods y experiencias únicas en Minecraft.</p>
+    </section>
+    <section id="projects">
+        <h2>Nuestros Proyectos</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>KindlyShowTitles</h3>
+                <p>Un mod para mejorar la interfaz de Minecraft.</p>
+            </div>
+            <div class="project">
+                <h3>CorruptedEvents</h3>
+                <p>Mod que transforma tu experiencia de juego con eventos únicos.</p>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contacto</h2>
+        <p>¿Tienes alguna duda? ¡Contáctanos!</p>
+        <form>
+            <input type="text" placeholder="Tu nombre" required>
+            <input type="email" placeholder="Tu correo" required>
+            <textarea placeholder="Tu mensaje"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Kindly Klan. Todos los derechos reservados.</p>
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute("href")).scrollIntoView({
+                    behavior: "smooth",
+                });
+            });
+        });
 
+    </script>
+</footer>
 </body>
 </html>
