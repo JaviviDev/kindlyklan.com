@@ -1,0 +1,137 @@
+/* General */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #fff; /* Textos en blanco */
+    line-height: 1.6;
+    background: #000; /* Fondo negro */
+}
+
+/* Header */
+header {
+    background: #000; /* Fondo negro */
+    color: #fff;
+    padding: 1rem 0;
+}
+
+header .banner-image {
+    width: 100%;
+    height: auto;
+    max-height: 200px; /* Ajustar la altura de la imagen */
+}
+
+/* Títulos */
+h1, h2 {
+    color: #fff; /* Títulos en blanco */
+    text-shadow: none; /* Sin contorno */
+}
+
+/* Secciones */
+section {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: #000; /* Fondo negro */
+    color: #fff; /* Textos en blanco */
+    border: none; /* Sin bordes */
+}
+
+/* Carrusel */
+/* Carrusel */
+.carousel {
+    position: relative;
+    max-width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    color: #fff;
+    padding: 2rem;
+}
+
+.carousel-slide iframe {
+    width: 560px; /* Ajusta el tamaño del vídeo */
+    height: 315px; /* Ajusta el tamaño del vídeo */
+    border: none; /* Elimina el borde */
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.carousel-button.prev {
+    left: 0;
+}
+
+.carousel-button.next {
+    right: 0;
+}
+header {
+    background: #20232a;
+    color: #fff;
+    padding: 1rem 0;
+    border-radius: 10px; /* Redondear */
+    border: 2px solid #fff; /* Bordes */
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+header a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header a:hover {
+    color: #61dafb;
+}
+/* Video del tráiler */
+#project-trailer {
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+#project-trailer iframe {
+    width: 80%; /* Ajusta el tamaño del vídeo */
+    height: 450px; /* Ajusta la altura del vídeo */
+    max-width: 1000px; /* Tamaño máximo del vídeo */
+}

@@ -3,70 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kindly Klan - El mejor estudio de Minecraft.">
-    <meta name="author" content="Kindly Klan">
+    <meta name="description" content="Colorful and Interactive Web Page">
+    <meta name="author" content="Your Name">
     <title>Kindly Klan</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0/dist/parallax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="scripts.js"></script>
+    <link rel="icon" href="src/img/kindlyklan.ico" type="image/x-icon">
 </head>
 <body>
+<div id="particles-js"></div>
+<video class="video-background" autoplay muted loop>
+    <source src="src/videos/fondobanner.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 <header>
     <nav>
-        <div class="logo">Kindly Klan</div>
+        <div class="logo">
+            <img src="src/img/kindlyklan.png" alt="Logo" class="logo-image">
+            Kindly Klan
+        </div>
         <ul>
             <li><a href="#about">Sobre Nosotros</a></li>
             <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#contact">Contacto</a></li>
+            <li><a href="#contact">Discord</a></li>
         </ul>
     </nav>
 </header>
 <main>
-    <section id="hero">
-        <h1>Bienvenidos a Kindly Klan</h1>
-        <p>Tu estudio de Minecraft favorito</p>
-        <a href="#projects" class="button">Descubre más</a>
+    <section id="hero" data-aos="fade-up">
+        <h1>Bienvenido a Kindly Klan</h1>
+        <p>"Creando por y para la comunidad"</p>
+        <a href="#projects" class="button">Saber más</a>
     </section>
-    <section id="about">
-        <h2>Sobre Nosotros</h2>
-        <p>Kindly Klan es un estudio dedicado a crear mods y experiencias únicas en Minecraft.</p>
-    </section>
-    <section id="projects">
-        <h2>Nuestros Proyectos</h2>
-        <div class="project-grid">
-            <div class="project">
-                <h3>KindlyShowTitles</h3>
-                <p>Un mod para mejorar la interfaz de Minecraft.</p>
+
+    <section id="about" data-aos="fade-right">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Sobre Nosotros</h2>
+                <p>Somos Kindly Klan!  <br>Desarrollamos series/eventos de Minecraft para creadores de contenido. <br>¡También podemos mantener tu servidor!</p>
             </div>
-            <div class="project">
-                <h3>CorruptedEvents</h3>
-                <p>Mod que transforma tu experiencia de juego con eventos únicos.</p>
+            <div class="about-video">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/l5OVFCFFv6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
-    <section id="contact">
-        <h2>Contacto</h2>
-        <p>¿Tienes alguna duda? ¡Contáctanos!</p>
-        <form>
-            <input type="text" placeholder="Tu nombre" required>
-            <input type="email" placeholder="Tu correo" required>
-            <textarea placeholder="Tu mensaje"></textarea>
-            <button type="submit">Enviar</button>
-        </form>
+
+    <section id="projects" data-aos="fade-left">
+        <h2>Nuestros <span class="gradient-text">Proyectos.</span></h2>
+        <div class="carousel">
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide">
+                        <h3><a href="dawnofwalkers2.html">Dawn Of Walkers 2</a></h3>
+                        <p>Una parte dos en contra del guion, donde los zombis contraatacan</p>
+                    </li>
+                    <li class="carousel-slide">
+                        <h3><a href="silence.html">Silence By Jonks</a></h3>
+                        <p>Un pueblo lleno de terror y peligro, con un alcalde sospechoso.</p>
+                    </li>
+                    <!-- Add more project slides as needed -->
+                </ul>
+            </div>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="contact" data-aos="fade-up">
+        <h2>Únete a nuestro <span class="gradient-text">Discord</span></h2>
+        <div class="contact-content">
+            <div class="contact-text">
+                <p>¿Quieres tu propio proyecto? ¡Puedes abrir ticket!<br>
+                    Hacemos proyectos de todo tipo, estamos completamente abiertos! <br>
+                    Sólo, ¡pregunta!</p>
+                <a href="https://discord.gg/kindlyklan" class="button">Unirse al Discord</a>
+            </div>
+            <widgetbot
+                    server="1150367610257555477"
+                    channel="1150379655136808973"
+                    width="600"
+                    height="300"
+            ></widgetbot>
+            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"></script>
+
+            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+                new Crate({
+                    server: '1150367610257555477',
+                    channel: '1150379655136808973',
+                    glyph: ['https://cdn.discordapp.com/attachments/1200818942072061954/1307702301917577246/LogoNuevoFondoBlanco.png?ex=673b442c&is=6739f2ac&hm=fa60b9e92829c7f06d9bfabfb3018de21c7f2469587363a3e4fbb11327d9b5b4&', '100%']
+                })
+            </script>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
     </section>
 </main>
 <footer>
     <p>&copy; 2024 Kindly Klan. Todos los derechos reservados.</p>
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute("href")).scrollIntoView({
-                    behavior: "smooth",
-                });
-            });
-        });
-
-    </script>
 </footer>
 </body>
 </html>
