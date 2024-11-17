@@ -1,6 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
     particlesJS.load('particles-js', 'particles-config.json', function() {
         console.log('particles.js loaded - callback');
+        const downloadButton = document.getElementById('download-button');
+
+        fetch('https://api.github.com/repos/javivi09dev/KindlyKlanLauncher/releases/latest')
+            .then(response => response.json())
+            .then(data => {
+                const latestVersionUrl = data.assets[0].browser_download_url;
+                downloadButton.href = latestVersionUrl;
+            })
+            .catch(error => console.error('Error fetching the latest release:', error));
     });
 
     AOS.init({

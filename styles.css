@@ -339,3 +339,24 @@ h2 {
 .carousel-button.next {
     right: 0;
 }
+/* Botón de descarga */
+.download-button {
+    background-color: #ffcc00; /* Color amarillo */
+    color: #000; /* Texto negro */
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: #e6b800; /* Color amarillo más oscuro al pasar el ratón */
+}
+
+.download-icon {
+    width: 20px; /* Ajusta el tamaño del icono */
+    height: auto;
+}
