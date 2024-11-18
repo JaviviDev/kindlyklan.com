@@ -82,3 +82,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     autoMoveCarousel();
 });
+window.addEventListener('load', () => {
+    const loadingScreen = document.getElementById('loading-screen');
+    const content = document.querySelector('.container');
+
+    // Eliminar el cargador después de que la página se haya cargado
+    setTimeout(() => {
+        loadingScreen.classList.add('active'); // Aplica el efecto de difuminado y desaparece el cargador
+        content.style.opacity = '1'; // Muestra el contenido de la página
+    }, 1000); // Tiempo de espera para que la animación de carga sea visible
+});

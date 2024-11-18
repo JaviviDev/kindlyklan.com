@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 </head>
+<body>
+<!-- Cargador -->
+<div id="loading-screen" class="loading-screen">
+    <img src="src/svg/loader.svg" alt="Loading Logo" class="loading-logo">
+</div>
+
 <header>
     <nav class="navbar">
         <div class="logo">
@@ -21,11 +27,17 @@
         </ul>
     </nav>
 </header>
-<body>
+
 <div class="background"></div>
-<div class="container">
+
+<div class="container" style="opacity: 0;">
     <img src="src/img/kindlyklanlauncher.png" alt="Kindly Klan Launcher Logo" class="launcher-logo">
     <h1>Descarga Kindly Klan Launcher</h1>
+    <div class="github-container">
+        <a href="https://github.com/javivi09dev/KindlyKlanLauncher" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" class="github-logo">
+        </a>
+    </div>
     <div class="buttons">
         <a id="download-apple" href="#" class="download-button">
             <img src="src/svg/mac.svg" alt="MAC Logo" class="logo"> Descargar para Apple
@@ -38,11 +50,21 @@
         </a>
     </div>
 </div>
+
 <footer>
-    <a href="https://github.com/javivi09dev/KindlyKlanLauncher" target="_blank">
-        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" class="github-logo">
-    </a>
+    <p>&copy; 2024 Kindly Klan. Todos los derechos reservados.</p>
+    <div class="social-links">
+        <a href="https://twitter.com/kindlyklan" target="_blank" class="social-icon">
+            <img src="src/svg/twitter.svg" alt="X/Twitter">
+        </a>
+        <a href="https://youtube.com/@Kindlyklan" target="_blank" class="social-icon">
+            <img src="src/svg/youtube.svg" alt="Youtube">
+        </a>
+        <a href="https://patreon.com/kindlyklan" target="_blank" class="social-icon">
+            <img src="src/svg/patreon.svg" alt="Patreon"> </a>
+    </div>
 </footer>
+
 <script src="downloadscript.js"></script>
 </body>
 </html>

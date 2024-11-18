@@ -1,11 +1,11 @@
-/* General */
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: #333;
     line-height: 1.6;
-    /* Fondo más negro */
-    text-shadow: 1px 1px 2px #000; /* Contorno de las fuentes */
+
+    text-shadow: 1px 1px 2px #000;
     background: #000 linear-gradient(45deg, #1b1c40, #0a0b18);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
@@ -18,13 +18,13 @@ body {
 }
 
 
-/* Header */
+
 header {
     background: #20232a;
     color: #fff;
     padding: 1rem 0;
-    border-radius: 10px; /* Redondear */
-    border: 2px solid #fff; /* Bordes */
+    border-radius: 10px;
+    border: 2px solid #fff;
 }
 
 header nav {
@@ -57,20 +57,19 @@ header a:hover {
     color: #61dafb;
 }
 
-/* Hero Section */
 #hero {
     background: linear-gradient(to right, #4e54c8, #8f94fb);
     color: #fff;
     text-align: center;
     padding: 4rem 1rem;
     animation: backgroundAnimation 10s infinite alternate;
-    border-radius: 10px; /* Redondear */
-    border: 2px solid #fff; /* Bordes */
+    border-radius: 10px;
+    border: 2px solid #fff;
 }
 
 #hero h1 {
-    font-size: 4rem; /* Más grande */
-    font-weight: 700; /* Más ancha */
+    font-size: 4rem;
+    font-weight: 700;
 }
 
 #hero .button {
@@ -78,7 +77,7 @@ header a:hover {
     color: #20232a;
     padding: 0.75rem 1.5rem;
     text-decoration: none;
-    border-radius: 10px; /* Redondear */
+    border-radius: 10px;
     display: inline-block;
     margin-top: 1rem;
     transition: background 0.3s;
@@ -89,13 +88,13 @@ header a:hover {
     color: #fff;
 }
 
-/* Sections */
+
 section {
     padding: 2rem 1rem;
     max-width: 1200px;
     margin: 0 auto;
-    border-radius: 10px; /* Redondear */
-    border: 2px solid #fff; /* Bordes */
+    border-radius: 10px;
+    border: 2px solid #fff;
 }
 
 #projects .project-grid {
@@ -105,12 +104,12 @@ section {
 }
 
 #projects .project {
-    background: #333; /* Fondo más oscuro */
-    padding: 2rem; /* Aumentar el padding */
-    border-radius: 10px; /* Redondear */
+    background: #333;
+    padding: 2rem;
+    border-radius: 10px;
     text-align: center;
     transition: transform 0.3s;
-    border: 2px solid #fff; /* Bordes */
+    border: 2px solid #fff;
 }
 
 #projects .project:hover {
@@ -119,32 +118,32 @@ section {
 
 #projects .project h3 {
     margin-top: 0;
-    font-size: 60rem; /* Aumentar el tamaño del texto */
-    font-weight: 700; /* Hacer el texto más grueso */
-    background: linear-gradient(to right, #f9d423, #ff4e50); /* Gradiente amarillo */
+    font-size: 60rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #f9d423, #ff4e50);
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: 2px 2px 4px #000; /* Contorno negro */
+    text-shadow: 2px 2px 4px #000;
 }
 
 #projects .project p {
-    font-size: 4rem; /* Aumentar el tamaño del texto */
-    font-weight: 700; /* Hacer el texto más grueso */
-    background: linear-gradient(to right, #f9d423, #ff4e50); /* Gradiente amarillo */
+    font-size: 4rem;
+    font-weight: 700;
+    background: linear-gradient(to right, #f9d423, #ff4e50);
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: 2px 2px 4px #000; /* Contorno negro */
+    text-shadow: 2px 2px 4px #000;
 }
 
-/* Footer */
+
 footer {
     background: #20232a;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
     font-size: 0.9rem;
-    border-radius: 10px; /* Redondear */
-    border: 2px solid #fff; /* Bordes */
+    border-radius: 10px;
+    border: 2px solid #fff;
 }
 
 /* Animations */
@@ -157,7 +156,7 @@ footer {
     }
 }
 
-/* Particles container */
+
 #particles-js {
     position: absolute;
     width: 100%;
@@ -169,7 +168,7 @@ footer {
 .banner-image {
     width: 100%;
     height: auto;
-    margin-bottom: 1rem; /* Espacio entre la imagen y el texto */
+    margin-bottom: 1rem;
 }
 .logo {
     display: flex;
@@ -177,12 +176,12 @@ footer {
 }
 
 .logo-image {
-    width: 40px; /* Ajusta el tamaño del logo según sea necesario */
+    width: 40px;
     height: auto;
-    margin-right: 0.5rem; /* Espacio entre el logo y el texto */
+    margin-right: 0.5rem;
 }
 
-/* Background videos */
+
 .video-background {
     position: absolute;
     top: 0;
@@ -199,18 +198,18 @@ body:hover .video-background {
     opacity: 0.5;
 }
 
-/* About Section */
+
 #about {
     background: #20232a;
     color: #fff;
     padding: 2rem 1rem;
     max-width: 1200px;
     margin: 2rem auto;
-    border-radius: 10px; /* Redondear */
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 2px solid #fff; /* Bordes */
+    border: 2px solid #fff;
 }
 
 .about-content {
@@ -229,15 +228,15 @@ body:hover .video-background {
     flex: 1;
 }
 
-/* Contact Section */
+
 #contact {
     background: #20232a;
     color: #fff;
     padding: 2rem 1rem;
     max-width: 1200px;
     margin: 2rem auto;
-    border-radius: 10px; /* Redondear */
-    border: 2px solid #fff; /* Bordes */
+    border-radius: 10px;
+    border: 2px solid #fff;
 }
 
 .contact-content {
@@ -253,23 +252,23 @@ body:hover .video-background {
 
 widgetbot {
     flex: 1;
-    margin-left: auto; /* Centrar a la derecha */
+    margin-left: auto;
 }
 
-/* Gradient and bold for "Proyectos" */
+
 .gradient-text {
     font-weight: 700;
     background: linear-gradient(to right, #4e54c8, #8f94fb);
     -webkit-background-clip: text;
     color: transparent;
-    text-shadow: 1px 1px 2px #fff; /* Delineado blanco */
+    text-shadow: 1px 1px 2px #fff;
 }
 
 h2 {
-    color: #fff; /* Color blanco para "Nuestros" */
+    color: #fff;
 }
 
-/* Carousel Styles */
+
 .carousel {
     position: relative;
     max-width: 80%;
@@ -295,7 +294,7 @@ h2 {
     text-align: center;
     position: relative;
     color: #fff;
-    padding: 2rem; /* Aumentar el padding */
+    padding: 2rem;
 }
 
 .carousel-slide::before {
@@ -310,7 +309,7 @@ h2 {
     z-index: -1;
     opacity: 0.5;
     transform: translate(-50%, -50%);
-    border-radius: 10px; /* Redondear las esquinas */
+    border-radius: 10px;
 }
 
 .carousel-slide:nth-child(1)::before {
@@ -340,10 +339,9 @@ h2 {
 .carousel-button.next {
     right: 0;
 }
-/* Botón de descarga */
 .download-button {
-    background-color: #ffcc00; /* Color amarillo */
-    color: #000; /* Texto negro */
+    background-color: #ffcc00;
+    color: #000;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
@@ -354,10 +352,68 @@ h2 {
 }
 
 .download-button:hover {
-    background-color: #e6b800; /* Color amarillo más oscuro al pasar el ratón */
+    background-color: #e6b800;
 }
 
 .download-icon {
-    width: 20px; /* Ajusta el tamaño del icono */
+    width: 20px;
     height: auto;
+}
+
+/*Iconos de las redes de KK*/
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #20232a;
+    color: #fff;
+    margin-top: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Cargador */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
+}
+
+.loading-screen.active {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-logo {
+    width: 150px;
 }
