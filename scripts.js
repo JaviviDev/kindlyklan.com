@@ -1,16 +1,42 @@
 document.addEventListener("DOMContentLoaded", () => {
     particlesJS.load('particles-js', 'particles-config.json', function() {
         console.log('particles.js loaded - callback');
-        const downloadButton = document.getElementById('download-button');
+            console.log('Script cargado correctamente.');
 
-        fetch('https://api.github.com/repos/javivi09dev/KindlyKlanLauncher/releases/latest')
-            .then(response => response.json())
-            .then(data => {
-                const latestVersionUrl = data.assets[0].browser_download_url;
-                downloadButton.href = latestVersionUrl;
-            })
-            .catch(error => console.error('Error fetching the latest release:', error));
-    });
+            const downloadApple = document.getElementById('download-apple');
+            const downloadWindows = document.getElementById('download-windows');
+            const downloadLinux = document.getElementById('download-linux');
+
+            // Fetch de los releases de GitHub
+            fetch('https://api.github.com/repos/javivi09dev/KindlyKlanLauncher/releases/latest')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Datos del release:', data); // Debug
+                    const assets = data.assets;
+
+                    // Mapear los archivos según el sistema operativo
+                    assets.forEach(asset => {
+                        const name = asset.name.toLowerCase();
+
+                        if (name.includes('.dmg') && name.includes('x64')) {
+                            // Archivo para macOS x64
+                            downloadApple.href = asset.browser_download_url;
+                        } else if (name.includes('.exe')) {
+                            // Archivo para Windows
+                            downloadWindows.href = asset.browser_download_url;
+                        } else if (name.includes('.appimage')) {
+                            // Archivo para Linux
+                            downloadLinux.href = asset.browser_download_url;
+                        }
+                    });
+                })
+                .catch(error => console.error('Error fetching the latest release:', error));
+        });
 
     AOS.init({
         duration: 1000,
