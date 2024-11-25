@@ -319,6 +319,9 @@ h2 {
 .carousel-slide:nth-child(2)::before {
     background-image: url('src/img/silence.png');
 }
+.carousel-slide:nth-child(3)::before {
+    background-image: url('src/img/bannerexwally.png');
+}
 
 .carousel-button {
     position: absolute;
