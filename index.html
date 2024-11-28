@@ -9,119 +9,184 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="icon" href="src/img/kindlyklan.ico" type="image/x-icon">
+</head>
+<body>
+    <div id="particles-js"></div>
+    <video class="video-background" autoplay muted loop>
+        <source src="src/videos/fondobanner.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="src/img/kindlyklan.png" alt="Logo" class="logo-image">
+                Kindly Klan
+            </div>
+            <ul>
+                <li>
+                    <a href="download.html" class="download-button" aria-label="Download Launcher">
+                        <img src="src/img/descargar.png" alt="Download Icon" class="download-icon"> Descargar Launcher
+                    </a>
+                </li>
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#featured-videos">Videos Destacados</a></li>
+                <li><a href="#contact">Discord</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="hero" data-aos="fade-up">
+            <h1 class="animate-heading">Bienvenido a Kindly Klan</h1>
+            <p class="hero-description">Creating for and by the community, events, and series in the game Minecraft.</p>
+            <a href="#projects" class="button smooth-scroll">Saber más</a>
+        </section>
+
+        <section id="about" data-aos="fade-right">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="animate-heading">Sobre Nosotros</h2>
+                    <p>Somos Kindly Klan! <br>Desarrollamos series/eventos de Minecraft para creadores de contenido. <br>¡También podemos mantener tu servidor, network o evento!</p>
+                </div>
+                <div class="about-video">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/l5OVFCFFv6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" data-aos="fade-left">
+            <h2 class="animate-heading">Nuestros <span class="gradient-text">Proyectos.</span></h2>
+            <div class="carousel">
+                <button class="carousel-button prev">&#10094;</button>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <h3><a href="dawnofwalkers2.html">Dawn Of Walkers 2</a></h3>
+                            <p>Una parte dos en contra del guion, donde los zombis contraatacan</p>
+                            <a href="dawnofwalkers2.html">
+                                <img src="src/img/dawnofwalkers.jpg" alt="Dawn Of Walkers 2" class="project-image">
+                            </a>
+                        </li>
+                        <li class="carousel-slide">
+                            <h3><a href="silence.html">Silence By Jonks</a></h3>
+                            <p>Un pueblo lleno de terror y peligro, con un alcalde sospechoso.</p>
+                            <a href="silence.html">
+                                <img src="src/img/silence.png" alt="Silence By Jonks" class="project-image">
+                            </a>
+                        </li>
+                        <li class="carousel-slide">
+                            <h3><a href="losextremosdewally.html">Los Extremos de Wally</a></h3>
+                            <p>El Gen W ha invadido el mundo. Y ha infectado el juego.</p>
+                            <a href="losextremosdewally.html">
+                                <img src="src/img/extremoswally.png" alt="Los Extremos de Wally" class="project-image">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button next">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="featured-videos" data-aos="fade-up">
+            <h2 class="animate-heading">Videos <span class="gradient-text">Destacados.</span></h2>
+            <div class="video-carousel">
+                <button class="carousel-button prev">&#10094;</button>
+                <div class="carousel-track-container">
+                    <ul class="carousel-track">
+                        <li class="carousel-slide current-slide">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/jXSnzjDQioE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/hRcKOaG_PjQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="video-container">
+                                <iframe
+                                    src="https://clips.twitch.tv/embed?clip=WimpyZealousPartridgeJKanStyle-Pmcy_OUqCRaL79PP&parent=kindlyklan.com"
+                                    frameborder="0"
+                                    allowfullscreen="true"
+                                    scrolling="no"
+                                    height="300"
+                                    width="100%">
+                                </iframe>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="video-container">
+                                <iframe src="https://clips.twitch.tv/embed?clip=ZealousSullenPistachioNomNom-1kUhBmyJhlpmzSbr&parent=kindlyklan.com" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="video-container">
+                                <iframe src="https://www.youtube.com/embed/ytNrYq18UGU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </li> 
+                        <li class="carousel-slide">
+                            <div class="video-container">
+                                <iframe src="https://clips.twitch.tv/embed?clip=TolerantOpenMartenMrDestructoid-xVX5gb6C463jC3CS&parent=kindlyklan.com" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                        <li class="carousel-slide">
+                            <div class="video-container">
+                                <iframe src="https://clips.twitch.tv/embed?clip=ResoluteOilySkunkTakeNRG-SqoDBy5Ru4cDV9Yk&parent=kindlyklan.com" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="carousel-button next">&#10095;</button>
+            </div>
+        </section>
+
+        <section id="contact" data-aos="fade-up">
+            <h2 class="animate-heading">Únete a nuestro <span class="gradient-text">Discord</span></h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>¿Quieres tu propio proyecto? ¡Puedes abrir ticket!<br>
+                        Hacemos proyectos de todo tipo, estamos completamente abiertos! <br>
+                        Sólo, ¡pregunta!</p>
+                    <a href="https://discord.gg/kindlyklan" class="button">Unirse al Discord</a>
+                </div>
+                <widgetbot
+                        server="1150367610257555477"
+                        channel="1150379655136808973"
+                        width="600"
+                        height="300"
+                ></widgetbot>
+                <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"></script>
+                <script>
+                    new Crate({
+                        server: '1150367610257555477',
+                        channel: '1150379655136808973',
+                        glyph: ['https://cdn.discordapp.com/attachments/1200818942072061954/1307702301917577246/LogoNuevoFondoBlanco.png', '100%']
+                    })
+                </script>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Kindly Klan. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/kindlyklan" target="_blank" class="social-icon">
+                <img src="src/svg/twitter.svg" alt="X/Twitter">
+            </a>
+            <a href="https://youtube.com/@Kindlyklan" target="_blank" class="social-icon">
+                <img src="src/svg/youtube.svg" alt="Youtube">
+            </a>
+            <a href="https://patreon.com/kindlyklan" target="_blank" class="social-icon">
+                <img src="src/svg/patreon.svg" alt="Patreon">
+            </a>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/parallax-js@3.1.0/dist/parallax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="scripts.js"></script>
-    <link rel="icon" href="src/img/kindlyklan.ico" type="image/x-icon">
-</head>
-<body>
-<div id="particles-js"></div>
-<video class="video-background" autoplay muted loop>
-    <source src="src/videos/fondobanner.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-<header>
-    <nav>
-        <div class="logo">
-            <img src="src/img/kindlyklan.png" alt="Logo" class="logo-image">
-            Kindly Klan
-        </div>
-        <ul>
-            <li>
-                <a href="download.html" class="download-button">
-                    <img src="src/img/descargar.png" alt="Download Icon" class="download-icon"> Descargar Launcher
-                </a>
-            </li>
-            <li><a href="#about">Sobre Nosotros</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li><a href="#contact">Discord</a></li>
-        </ul>
-    </nav>
-</header>
-<main>
-    <section id="hero" data-aos="fade-up">
-        <h1>Bienvenido a Kindly Klan</h1>
-        <p>"Creando por y para la comunidad"</p>
-        <a href="#projects" class="button">Saber más</a>
-    </section>
-
-    <section id="about" data-aos="fade-right">
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Sobre Nosotros</h2>
-                <p>Somos Kindly Klan!  <br>Desarrollamos series/eventos de Minecraft para creadores de contenido. <br>¡También podemos mantener tu servidor, network o evento!</p>
-            </div>
-            <div class="about-video">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/l5OVFCFFv6k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" data-aos="fade-left">
-        <h2>Nuestros <span class="gradient-text">Proyectos.</span></h2>
-        <div class="carousel">
-            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
-            <div class="carousel-track-container">
-                <ul class="carousel-track">
-                    <li class="carousel-slide">
-                        <h3><a href="dawnofwalkers2.html">Dawn Of Walkers 2</a></h3>
-                        <p>Una parte dos en contra del guion, donde los zombis contraatacan</p>
-                    </li>
-                    <li class="carousel-slide">
-                        <h3><a href="silence.html">Silence By Jonks</a></h3>
-                        <p>Un pueblo lleno de terror y peligro, con un alcalde sospechoso.</p>
-                    </li>
-                    <li class="carousel-slide">
-                        <h3><a href="losextremosdewally.html">Los Extremos de Wally</a></h3>
-                        <p>El Gen W ha invadido el mundo. Y ha infectado el juego.</p>
-                    </li>
-                </ul>
-            </div>
-            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
-        </div>
-    </section>
-
-    <section id="contact" data-aos="fade-up">
-        <h2>Únete a nuestro <span class="gradient-text">Discord</span></h2>
-        <div class="contact-content">
-            <div class="contact-text">
-                <p>¿Quieres tu propio proyecto? ¡Puedes abrir ticket!<br>
-                    Hacemos proyectos de todo tipo, estamos completamente abiertos! <br>
-                    Sólo, ¡pregunta!</p>
-                <a href="https://discord.gg/kindlyklan" class="button">Unirse al Discord</a>
-            </div>
-            <widgetbot
-                    server="1150367610257555477"
-                    channel="1150379655136808973"
-                    width="600"
-                    height="300"
-            ></widgetbot>
-            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3"></script>
-
-            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-                new Crate({
-                    server: '1150367610257555477',
-                    channel: '1150379655136808973',
-                    glyph: ['https://cdn.discordapp.com/attachments/1200818942072061954/1307702301917577246/LogoNuevoFondoBlanco.png?ex=673b442c&is=6739f2ac&hm=fa60b9e92829c7f06d9bfabfb3018de21c7f2469587363a3e4fbb11327d9b5b4&', '100%']
-                })
-            </script>
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/html-embed"></script>
-    </section>
-</main>
-<footer>
-    <p>&copy; 2024 Kindly Klan. Todos los derechos reservados.</p>
-    <div class="social-links">
-        <a href="https://twitter.com/kindlyklan" target="_blank" class="social-icon">
-            <img src="src/svg/twitter.svg" alt="X/Twitter">
-        </a>
-        <a href="https://youtube.com/@Kindlyklan" target="_blank" class="social-icon">
-            <img src="src/svg/youtube.svg" alt="Youtube">
-        </a>
-        <a href="https://patreon.com/kindlyklan" target="_blank" class="social-icon">
-            <img src="src/svg/patreon.svg" alt="Patreon"> </a>
-    </div>
-</footer>
 </body>
 </html>

@@ -1,94 +1,135 @@
-document.addEventListener("DOMContentLoaded", () => {
-    particlesJS.load('particles-js', 'particles-config.json', function() {
-        console.log('particles.js loaded - callback');
-            console.log('Script cargado correctamente.');
-
-            const downloadApple = document.getElementById('download-apple');
-            const downloadWindows = document.getElementById('download-windows');
-            const downloadLinux = document.getElementById('download-linux');
-
-            // Fetch de los releases de GitHub
-            fetch('https://api.github.com/repos/javivi09dev/KindlyKlanLauncher/releases/latest')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    return response.json();
-                })
-                .then(data => {
-                    console.log('Datos del release:', data); // Debug
-                    const assets = data.assets;
-
-                    // Mapear los archivos según el sistema operativo
-                    assets.forEach(asset => {
-                        const name = asset.name.toLowerCase();
-
-                        if (name.includes('.dmg') && name.includes('x64')) {
-                            // Archivo para macOS x64
-                            downloadApple.href = asset.browser_download_url;
-                        } else if (name.includes('.exe')) {
-                            // Archivo para Windows
-                            downloadWindows.href = asset.browser_download_url;
-                        } else if (name.includes('.appimage')) {
-                            // Archivo para Linux
-                            downloadLinux.href = asset.browser_download_url;
-                        }
-                    });
-                })
-                .catch(error => console.error('Error fetching the latest release:', error));
-        });
-
+document.addEventListener('DOMContentLoaded', () => {
     AOS.init({
         duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
+        once: true
     });
 
-    const parallaxContainer = document.getElementById('parallax-container');
-    if (parallaxContainer) {
-        const parallaxInstance = new Parallax(parallaxContainer);
-    } else {
-        console.error('Parallax container not found');
-    }
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
+    // Smooth Scrolling
+    const smoothScrollButtons = document.querySelectorAll('.smooth-scroll');
+    smoothScrollButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-                behavior: "smooth",
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            targetSection.scrollIntoView({
+                behavior: 'smooth'
             });
         });
     });
 
-    // Función que mueve el carrusel de los proyectos
-    let currentSlide = 0;
+    // Animate Headings on Scroll
+    const animateHeadings = document.querySelectorAll('.animate-heading');
+    const observerOptions = {
+        threshold: 0.1
+    };
 
-    window.moveCarousel = function(direction) {
-        const track = document.querySelector('.carousel-track');
+    const headingObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    animateHeadings.forEach(heading => {
+        headingObserver.observe(heading);
+    });
+
+    // Carousel Functionality
+    const initializeCarousel = (carouselSelector) => {
+        const carousel = document.querySelector(carouselSelector);
+        const track = carousel.querySelector('.carousel-track');
         const slides = Array.from(track.children);
-        const slideWidth = slides[0].getBoundingClientRect().width;
+        const nextButton = carousel.querySelector('.carousel-button.next');
+        const prevButton = carousel.querySelector('.carousel-button.prev');
+        let slideWidth = slides[0].getBoundingClientRect().width;
 
-        currentSlide = (currentSlide + direction + slides.length) % slides.length;
-        const amountToMove = -currentSlide * slideWidth;
+        // Arrange the slides next to one another
+        const setSlidePosition = (slide, index) => {
+            slide.style.left = slideWidth * index + 'px';
+        };
+        slides.forEach(setSlidePosition);
 
-        track.style.transform = `translateX(${amountToMove}px)`;
+        const moveToSlide = (track, currentSlide, targetSlide) => {
+            track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
+            currentSlide.classList.remove('current-slide');
+            targetSlide.classList.add('current-slide');
+        };
+
+        const nextSlide = () => {
+            const currentSlide = track.querySelector('.current-slide');
+            let nextSlide = currentSlide.nextElementSibling;
+            if(!nextSlide){
+                nextSlide = slides[0];
+            }
+            moveToSlide(track, currentSlide, nextSlide);
+        };
+
+        const prevSlideFunc = () => {
+            const currentSlide = track.querySelector('.current-slide');
+            let prevSlide = currentSlide.previousElementSibling;
+            if(!prevSlide){
+                prevSlide = slides[slides.length -1];
+            }
+            moveToSlide(track, currentSlide, prevSlide);
+        };
+
+        nextButton.addEventListener('click', nextSlide);
+        prevButton.addEventListener('click', prevSlideFunc);
+
+        // Auto Slide
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        // Pause on Hover
+        carousel.addEventListener('mouseenter', () => {
+            clearInterval(slideInterval);
+        });
+        carousel.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(nextSlide, 5000);
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            slideWidth = slides[0].getBoundingClientRect().width;
+            slides.forEach(setSlidePosition);
+            const currentSlide = track.querySelector('.current-slide');
+            track.style.transform = 'translateX(-' + currentSlide.style.left + ')';
+        });
+    };
+
+    // Initialize Project Carousel
+    initializeCarousel('.carousel');
+
+    // Initialize Featured Videos Carousel
+    initializeCarousel('.video-carousel');
+
+    // Initialize Parallax.js
+    const scene = document.getElementById('particles-js');
+    if(scene){
+        new Parallax(scene, {
+            relativeInput: true
+        });
     }
 
-    function autoMoveCarousel() {
-        moveCarousel(1);
-        setTimeout(autoMoveCarousel, 5000); // Cambia cada 5 segundos
-    }
+    // Smooth Transition from Video to Content
+    const video = document.querySelector('.video-background');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            video.classList.add('fade-out');
+            const loadingScreen = document.querySelector('.loading-screen');
+            loadingScreen.classList.remove('active');
+        }, 2000); // Adjust delay as needed
+    });
 
-    autoMoveCarousel();
-});
-window.addEventListener('load', () => {
-    const loadingScreen = document.getElementById('loading-screen');
-    const content = document.querySelector('.container');
-
-    // Eliminar el cargador después de que la página se haya cargado
-    setTimeout(() => {
-        loadingScreen.classList.add('active'); // Aplica el efecto de difuminado y desaparece el cargador
-        content.style.opacity = '1'; // Muestra el contenido de la página
-    }, 1000); // Tiempo de espera para que la animación de carga sea visible
+    // CSS for fade-out
+    const style = document.createElement('style');
+    style.innerHTML = `
+        .video-background.fade-out {
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+    `;
+    document.head.appendChild(style);
 });
