@@ -1,46 +1,76 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log('Script cargado correctamente.');
+    const downloadButtons = {
+        apple: document.getElementById('download-apple'),
+        windows: document.getElementById('download-windows'),
+        linux: document.getElementById('download-linux')
+    };
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 
-    const downloadApple = document.getElementById('download-apple');
-    const downloadWindows = document.getElementById('download-windows');
-    const downloadLinux = document.getElementById('download-linux');
+    const container = document.querySelector('.container');
+    const loadingScreen = document.getElementById('loading-screen');
 
-    // Fetch de los releases de GitHub
-    fetch('https://api.github.com/repos/javivi09dev/KindlyKlanLauncher/releases/latest')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Datos del release:', data); // Debug
-            const assets = data.assets;
+    async function fetchReleases() {
+        try {
+            const response = await fetch('https://api.github.com/repos/javivi09dev/KindlyKlanLauncher/releases/latest');
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            
+            const data = await response.json();
+            console.log('Release data:', data);
 
-            assets.forEach(asset => {
+            data.assets.forEach(asset => {
                 const name = asset.name.toLowerCase();
+                const url = asset.browser_download_url;
 
                 if (name.includes('.dmg') && !name.includes('.blockmap') && name.includes('x64')) {
-                    downloadApple.href = asset.browser_download_url;
-                    console.log('Archivo macOS asignado:', asset.browser_download_url);
+                    downloadButtons.apple.href = url;
+                    downloadButtons.apple.dataset.version = data.tag_name;
                 } else if (name.includes('.exe') && !name.includes('.blockmap')) {
-                    downloadWindows.href = asset.browser_download_url;
-                    console.log('Archivo Windows asignado:', asset.browser_download_url);
+                    downloadButtons.windows.href = url;
+                    downloadButtons.windows.dataset.version = data.tag_name;
                 } else if (name.includes('.appimage') && !name.includes('.blockmap')) {
-                    downloadLinux.href = asset.browser_download_url;
-                    console.log('Archivo Linux asignado:', asset.browser_download_url);
+                    downloadButtons.linux.href = url;
+                    downloadButtons.linux.dataset.version = data.tag_name;
                 }
             });
-        })
-        .catch(error => console.error('Error fetching the latest release:', error));
-});
-window.addEventListener('load', () => {
-    const loadingScreen = document.getElementById('loading-screen');
-    const content = document.querySelector('.container');
 
-    // Eliminar el cargador después de que la página se haya cargado
-    setTimeout(() => {
-        loadingScreen.classList.add('active'); // Aplica el efecto de difuminado y desaparece el cargador
-        content.style.opacity = '1'; // Muestra el contenido de la página
-    }, 1000); // Tiempo de espera para que la animación de carga sea visible
+            // Add version numbers to buttons
+            Object.values(downloadButtons).forEach(button => {
+                if (button.dataset.version) {
+                    const span = document.createElement('span');
+                    span.className = 'version';
+                    span.textContent = ` (${button.dataset.version})`; 
+                    button.appendChild(span);
+                }
+            });
+
+        } catch (error) {
+            console.error('Error fetching releases:', error);
+            showError('Error loading download links. Please try again later.');
+        }
+    }
+
+    function showError(message) {
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'error-message';
+        errorDiv.textContent = message;
+        container.prepend(errorDiv);
+    }
+
+    // Inicializar
+    fetchReleases();
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loadingScreen.classList.add('active');
+            container.classList.add('visible');
+        }, 1000);
+    });
+    Object.values(downloadButtons).forEach(button => {
+        button.addEventListener('click', (e) => {
+            const platform = button.id.replace('download-', '');
+            console.log(`Download started for ${platform}`);
+        });
+    });
 });

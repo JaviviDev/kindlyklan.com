@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Los Extremos de Wally">
+    <meta name="author" content="Kindly Klan">
+    <title>Los Extremos de Wally</title>
+    <link rel="stylesheet" href="../../projectstyles.css">
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+<!-- Header con navegación -->
+<header>
+    <nav>
+        <div class="logo">
+            <img src="../../src/img/kindlyklan.png" alt="Logo" class="logo-image">
+            Kindly Klan
+        </div>
+        <ul>
+            <li>
+                <a href="download.html" class="download-button">
+                    <img src="../../src/img/descargar.png" alt="Download Icon" class="download-icon"> Descargar Launcher
+                </a>
+            </li>
+            <li><a href="../../index.html">Sobre Nosotros</a></li>
+            <li><a href="../../index.html">Proyectos</a></li>
+            <li><a href="../../index.html">Discord</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Imagen en horizontal cubriendo toda la parte de arriba -->
+<section>
+    <img src="../../src/img/bannerexwally.png" alt="Los Extremos de Wally" class="banner-image">
+</section>
+
+<!-- Nombre en grande -->
+<main>
+    <section id="project-title">
+        <h1>Los Extremos de Wally</h1>
+    </section>
+
+    <!-- Breve introducción -->
+    <section id="project-intro">
+        <p><strong>Los Extremos de Wally</strong> fue una serie donde el Gen W se ha esparcido por el mundo, solo reinan las criaturas malignas. Pero además, este gen es capaz de desatar el caos, y de una forma muy especial: Los jugadores pueden cambiar TODO del juego, a través de votaciones. </p>
+    </section>
+
+    <!-- Video del tráiler de Youtube -->
+    <section id="project-trailer">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jpI2B9cz4sU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </section>
+
+    <!-- Desarrollo -->
+    <section id="project-details">
+        <div id="particles-js">
+            <p>"Los Extremos de Wally" fue una serie ambientada en MC Extremo con sistemas de 3 vidas y PVP, mecánicas de votación por premios o castigos. Enfocada en la dificultad de los mobs y la supervivencia. Cuando salía una votación, los jugadores elegían por una ventaja global o individual, ahí estaba 'la gracia', ya que los jugadores podían molestarse unos a otros.</p></div>
+    </section>
+</main>
+
+<footer>
+    <section id="related-videos">
+        <h2>¡Conoce más!</h2>
+        <div class="carousel">
+            <button class="carousel-button prev" onclick="moveCarousel(-1)">&#10094;</button>
+            <div class="carousel-track-container">
+                <ul class="carousel-track">
+                    <li class="carousel-slide">
+                        <iframe width="280" height="157" src="https://www.youtube.com/embed/daLMOftbDKo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe width="280" height="157" src="https://www.youtube.com/embed/CxcRoNClKUw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </li>
+                    <li class="carousel-slide">
+                        <iframe width="280" height="157" src="https://www.youtube.com/embed/sQsIJlGSzmw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </li>
+                </ul>
+            </div>
+            <button class="carousel-button next" onclick="moveCarousel(1)">&#10095;</button>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+        new Crate({
+            server: '1150367610257555477',
+            channel: '1150379655136808973',
+            glyph: ['https://cdn.discordapp.com/attachments/1200818942072061954/1307702301917577246/LogoNuevoFondoBlanco.png?ex=673b442c&is=6739f2ac&hm=fa60b9e92829c7f06d9bfabfb3018de21c7f2469587363a3e4fbb11327d9b5b4&', '100%']
+        })
+    </script>
+</footer>
+<script src="../../scripts.js"></script>
+<script>
+    particlesJS.load('particles-js', 'particles-config.json', function() {
+        console.log('particles.js loaded - callback');
+    });
+
+    // Función que mueve el carrusel de los vídeos relacionados
+    let currentSlide = 0;
+
+    function moveCarousel(direction) {
+        const track = document.querySelector('.carousel-track');
+        const slides = Array.from(track.children);
+        const slideWidth = slides[0].getBoundingClientRect().width;
+
+        currentSlide = (currentSlide + direction + slides.length) % slides.length;
+        const amountToMove = -currentSlide * slideWidth;
+
+        track.style.transform = `translateX(${amountToMove}px)`;
+    }
+
+    function autoMoveCarousel() {
+        moveCarousel(1);
+        setTimeout(autoMoveCarousel, 5000);
+    }
+
+    autoMoveCarousel();
+</script>
+</body>
+</html>
