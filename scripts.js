@@ -331,3 +331,4 @@ const initVideoCarousel = () => {
 
 // Inicializar el carrusel
 document.addEventListener('DOMContentLoaded', initVideoCarousel);
+//                    <a href="" class="project-link">Ver más</a>
