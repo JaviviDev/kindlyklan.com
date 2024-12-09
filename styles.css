@@ -1110,3 +1110,56 @@ body:hover .video-background {
     -moz-transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in;
 }
+
+.collaboration-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw; /* Ajusta el espacio entre los logotipos */
+  margin-bottom: 2rem; /* Ajusta el margen inferior */
+}
+
+.logo {
+  width: 10vw; /* Ajusta el tamaño de los logotipos según el ancho de la pantalla */
+  height: auto; /* Mantén la proporción del logotipo */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: brightness(1.2);
+}
+
+.collaboration-icon {
+  font-size: 4vw; /* Ajusta el tamaño del icono según el ancho de la pantalla */
+  color: var(--primary);
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.collaboration-icon:hover {
+  transform: scale(1.2);
+  color: var(--secondary);
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .logo {
+    width: 20vw; /* Ajusta el tamaño de los logotipos para pantallas más pequeñas */
+  }
+
+  .collaboration-icon {
+    font-size: 8vw; /* Ajusta el tamaño del icono para pantallas más pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    width: 30vw; /* Ajusta el tamaño de los logotipos para pantallas muy pequeñas */
+  }
+
+  .collaboration-icon {
+    font-size: 10vw; /* Ajusta el tamaño del icono para pantallas muy pequeñas */
+  }
+}
