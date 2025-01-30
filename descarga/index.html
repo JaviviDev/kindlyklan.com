@@ -1,74 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descarga Kindly Klan Launcher</title>
+    <meta name="description" content="Descarga el launcher de Kindly Klan para acceder a nuestros proyectos y eventos exclusivos.">
+    <meta name="author" content="Kindly Klan">
     <link rel="stylesheet" href="../downloadstyles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="icon" href="../src/img/kindlyklan.ico" type="image/x-icon">
 </head>
 <body>
-<header>
-    <nav class="navbar">
-        <div class="logo">
-            <img src="../src/img/kindlyklan.png" alt="Logo" class="logo-image">
-            Kindly Klan
-        </div>
-        <ul>
-            <li><a href="../index.html">Sobre Nosotros</a></li>
-            <li><a href="../index.html">Proyectos</a></li>
-            <li><a href="../index.html">Discord</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="../src/img/kindlyklan.png" alt="Logo de Kindly Klan" class="logo-image">
+                <span class="logo-text">Kindly Klan</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Sobre Nosotros</a></li>
+                <li><a href="../index.html">Proyectos</a></li>
+                <li><a href="../index.html">Discord</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<div class="background"></div>
+    <div class="background"></div>
 
-<div class="container">
-    <div class="content-wrapper" aria-live="polite">
-        <img src="../src/img/kindlyklanlauncher.png" alt="Kindly Klan Launcher Logo" class="launcher-logo">
-        <h1>Descarga Kindly Klan Launcher</h1>
-        <div class="github-container">
-            <a href="https://github.com/javivi09dev/KindlyKlanLauncher" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" class="github-logo">
-            </a>
-        </div>
-        <div class="buttons">
-            <a id="download-apple" href="#" class="download-button">
-                <img src="../src/svg/mac.svg" alt="MAC Logo" class="logo"> Descargar para Mac
-            </a>
-            <a id="download-windows" href="#" class="download-button">
-                <img src="../src/svg/windows.svg" alt="Windows Logo" class="logo"> Descargar para Windows
-            </a>
-            <a id="download-linux" href="#" class="download-button">
-                <img src="../src/svg/linux.svg" alt="Linux Logo" class="logo"> Descargar para Linux
-            </a>
-        </div>
-        <div class="previous-versions">
-            <h2>Versiones Anteriores</h2>
-            <div class="versions-carousel">
-                <div id="previous-versions-list" class="versions-list"></div>
+    <main class="container">
+        <div class="content-wrapper" aria-live="polite">
+            <img src="../src/img/kindlyklanlauncher.png" alt="Kindly Klan Launcher Logo" class="launcher-logo" data-aos="fade-up">
+            <h1 data-aos="fade-up" data-aos-delay="100">Descarga Kindly Klan Launcher</h1>
+            <div class="github-container" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://github.com/javivi09dev/KindlyKlanLauncher" target="_blank" aria-label="GitHub">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub Logo" class="github-logo">
+                </a>
+            </div>
+            <div class="buttons" data-aos="fade-up" data-aos-delay="300">
+                <a id="download-apple" href="#" class="download-button">
+                    <img src="../src/svg/mac.svg" alt="MAC Logo" class="logo"> Descargar para Mac
+                </a>
+                <a id="download-windows" href="#" class="download-button">
+                    <img src="../src/svg/windows.svg" alt="Windows Logo" class="logo"> Descargar para Windows
+                </a>
+                <a id="download-linux" href="#" class="download-button">
+                    <img src="../src/svg/linux.svg" alt="Linux Logo" class="logo"> Descargar para Linux
+                </a>
+            </div>
+            <div class="previous-versions" data-aos="fade-up" data-aos-delay="400">
+                <h2>Versiones Anteriores</h2>
+                <div class="versions-carousel">
+                    <div id="previous-versions-list" class="versions-list"></div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </main>
 
-<footer>
-    <p>&copy; 2024 Kindly Klan. Todos los derechos reservados.</p>
-    <div class="social-links">
-        <a href="https://twitter.com/kindlyklan" target="_blank" class="social-icon">
-            <img src="../src/svg/twitter.svg" alt="X/Twitter">
-        </a>
-        <a href="https://youtube.com/@Kindlyklan" target="_blank" class="social-icon">
-            <img src="../src/svg/youtube.svg" alt="Youtube">
-        </a>
-        <a href="https://patreon.com/kindlyklan" target="_blank" class="social-icon">
-            <img src="../src/svg/patreon.svg" alt="Patreon"> </a>
-    </div>
-</footer>
+    <footer>
+        <p>&copy; 2025 Kindly Klan. Todos los derechos reservados.</p>
+        <div class="social-links">
+            <a href="https://twitter.com/kindlyklan" target="_blank" class="social-icon" aria-label="Twitter">
+                <img src="../src/svg/twitter.svg" alt="Twitter">
+            </a>
+            <a href="https://youtube.com/@Kindlyklan" target="_blank" class="social-icon" aria-label="YouTube">
+                <img src="../src/svg/youtube.svg" alt="YouTube">
+            </a>
+            <a href="https://patreon.com/kindlyklan" target="_blank" class="social-icon" aria-label="Patreon">
+                <img src="../src/svg/patreon.svg" alt="Patreon">
+            </a>
+        </div>
+    </footer>
 
-<script src="../downloadscript.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../downloadscript.js"></script>
 </body>
 </html>
