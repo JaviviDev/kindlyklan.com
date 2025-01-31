@@ -238,13 +238,12 @@ header {
 /* Versiones anteriores */
 .previous-versions {
     margin-top: 2rem;
-    animation: fadeIn 1s ease-in-out;
+    text-align: center;
 }
 
 .versions-carousel {
-    display: flex;
+    width: 100%;
     overflow-x: auto;
-    gap: 1rem;
     padding: 1rem;
 }
 
@@ -261,7 +260,6 @@ header {
     transition: transform var(--transition-speed) ease, background-color var(--transition-speed) ease;
     min-width: 200px;
     text-align: left;
-    color: var(--text-color); /* Ensure text color is set */
 }
 
 .version-card:hover {
@@ -270,11 +268,10 @@ header {
 }
 
 .version-card a {
-    color: var(--primary-color);
     text-decoration: none;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .version-card a:hover {
