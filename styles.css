@@ -118,7 +118,7 @@ header ul {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.3rem;
 }
 
 .nav-link {
@@ -1109,4 +1109,32 @@ body:hover .video-background {
     -webkit-transition: box-shadow 0.2s ease-in;
     -moz-transition: box-shadow 0.2s ease-in;
     transition: box-shadow 0.2s ease-in;
+}
+.forms-button {
+    background: linear-gradient(45deg, #4CAF50, #45a049);
+    color: var(--light);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
+}
+
+.forms-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #45a049, #4CAF50);
+}
+
+.forms-icon {
+    width: 24px;
+    height: 24px;
+    transition: var(--transition);
+}
+
+.forms-button:hover .forms-icon {
+    transform: rotate(360deg) scale(1.1);
 }
